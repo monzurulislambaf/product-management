@@ -32,8 +32,7 @@
 
             <div class="mb-3">
                 <label for="image" class="form-label">Image</label>
-                <input type="text" name="image" class="form-control" id="image" accept="image/*">
-                <small>Current image: {{ $product->image }}</small>
+                <input type="text" name="image" class="form-control" value="{{ old('image', $product->image) }}">
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
