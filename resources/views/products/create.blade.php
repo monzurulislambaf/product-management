@@ -25,7 +25,7 @@
                     placeholder="Enter stock quantity">
             </div>
             <div class="mb-3">
-                <label for="image" class="form-label">Image</label>
+                <label for="image" class="form-label">Image Link</label>
                 <input type="text" name="image" class="form-control" id="image" accept="image/*">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
