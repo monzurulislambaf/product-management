@@ -3,6 +3,26 @@
 @section('content')
     <section class="container">
         <a href="{{ route('products.create') }}" class="btn btn-primary">Create Product</a>
+        <!-- Search Form -->
+        <form method="GET" action="{{ route('products.index') }}" class="mb-3">
+            <div class="input-group">
+                <input type="text" name="search" class="form-control" placeholder="Search by ID or Description"
+                    value="{{ request()->get('search') }}">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </div>
+        </form>
+
+        <!-- Sorting Links -->
+        <div class="mb-3">
+            <a href="{{ route('products.index', ['sort_by' => 'name', 'sort_order' => $sortOrder === 'asc' ? 'desc' : 'asc']) }}"
+                class="btn btn-link">
+                Sort by Name
+            </a> |
+            <a href="{{ route('products.index', ['sort_by' => 'price', 'sort_order' => $sortOrder === 'asc' ? 'desc' : 'asc']) }}"
+                class="btn btn-link">
+                Sort by Price
+            </a>
+        </div>
         <table class="table">
             <thead>
                 <tr>
